@@ -2,7 +2,8 @@
     "globals": {
         "document": "readonly",
         "window": "readonly",
-        "fetch":"readonly"
+        "fetch":"readonly",
+        "setTimeout":"readonly"
       },
     "parser": "@typescript-eslint/parser",
     "plugins": [

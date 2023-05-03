@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "this is a basic react app",
   "main": "index.js",
-   "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
     "build": "parcel build index.html"
@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-shimmer": "^3.2.0"
   },
   "browserslist": [
     "last 2 Chrome versions",

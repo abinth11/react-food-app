@@ -13,12 +13,15 @@ const AppLayout = () => {
   const [allRestaurants, setAllRestaurants] = useState([])
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
   const [searchText, setSearchText] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
   const getRestaurants = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.927532&lng=76.2638427&page_type=DESKTOP_WEB_LISTING")
     const parsedJson = await data.json()
     setFilteredRestaurant(parsedJson?.data?.cards[2]?.data?.data?.cards)
     setAllRestaurants(parsedJson?.data?.cards[2]?.data?.data?.cards)
-    console.log(parsedJson?.data?.cards[2]?.data?.data?.cards)
+    setTimeout(()=>{
+      setIsLoading(false)
+    },2000)
   }
   return (
     <>
@@ -27,7 +30,10 @@ const AppLayout = () => {
         restaurant={filteredRestaurant}
         setRestaurant={setFilteredRestaurant}
         allRestaurant={allRestaurants} />
-      <Body restaurant={filteredRestaurant} allRestaurants={allRestaurants} />
+      <Body restaurant={filteredRestaurant}
+        allRestaurants={allRestaurants}
+        isLoading={isLoading}
+      />
       <Footer />
     </>
   )
