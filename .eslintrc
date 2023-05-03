@@ -1,7 +1,8 @@
 {
     "globals": {
         "document": "readonly",
-        "window": "readonly"
+        "window": "readonly",
+        "fetch":"readonly"
       },
     "parser": "@typescript-eslint/parser",
     "plugins": [

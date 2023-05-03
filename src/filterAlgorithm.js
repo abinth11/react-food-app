@@ -1,9 +1,8 @@
-const filterData = (searchText,data,setData) => {
-    const filteredData = data.filter((item) => {
-      return item.data.name.toLowerCase().includes(searchText.toLowerCase())
+const filterData = (searchText,data,setData,allData) => {
+    const filteredData = allData.filter((item) => {
+      return item.data.name.toLowerCase().trim().includes(searchText.toLowerCase().trim())
     })
     setData(filteredData)
   }
-
   export default filterData
 

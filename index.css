@@ -107,3 +107,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.shimmer {
+    background-color: red;
+    margin-top: 100px;
+}

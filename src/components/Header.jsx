@@ -6,7 +6,7 @@ const logo = (
     <img src={logoImageUrl} alt="logo" />
   </div>
 );
-const Header = ({searchText,setSearchText,restaurant,setRestaurant}) => {
+const Header = ({searchText,setSearchText,restaurant,setRestaurant,allRestaurant,}) => {
   return (
     <div className="header">
       <a href="/"> {logo}</a>
@@ -17,7 +17,7 @@ const Header = ({searchText,setSearchText,restaurant,setRestaurant}) => {
             value={searchText}
             onChange={e => {
               setSearchText(e.target.value)
-              filterData(searchText,restaurant,setRestaurant) 
+              filterData(searchText,restaurant,setRestaurant,allRestaurant,) 
             }}
           />
         </li>
