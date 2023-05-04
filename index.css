@@ -115,3 +115,26 @@ body {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
+.offers{
+    padding-top: 100px;
+}
+.nav-link{
+    text-decoration: none;
+    color: #333333;
+}
+.card-link{
+    text-decoration: none;
+    color: #333333;
+}
+.help{
+    padding-top: 100px;
+}
+.login{
+    padding-top: 100px;
+}
+.cart{
+    padding-top: 100px;
+}
+.view-restaurant{
+    padding-top: 100px;
+}
