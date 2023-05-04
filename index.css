@@ -2,19 +2,23 @@
     width: 6px;
     height: 6px !important;
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 10px;
 }
+
 ::-webkit-scrollbar-track {
     background-color: #f1f1f1;
 }
+
 body {
     overflow-y: scroll;
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
 }
+
 .header {
     border: 2px solid #f0f0f0;
     display: flex;
@@ -30,24 +34,29 @@ body {
     font-family: 'Roboto', sans-serif;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
+
 .header>ul {
     display: flex;
     list-style: none;
     padding-right: 150px;
 }
-.header > ul > li:not(:first-child) {
+
+.header>ul>li:not(:first-child) {
     padding: 13px 40px 13px 10px;
     font-size: 18px;
     color: #7a7a7a;
 }
-.header > ul > li:not(:first-child){
+
+.header>ul>li:not(:first-child) {
     cursor: pointer;
     color: #333;
     transition: background-color 0.2s ease-in-out;
 }
-.header > ul > li:first-child{
+
+.header>ul>li:first-child {
     margin-right: 40px;
 }
+
 .header>ul>li>input {
     /* width: 400px; */
     padding: 15px 0px 15px 0px;
@@ -62,19 +71,23 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
+
 .header>ul>li>input::placeholder {
     transform: translateX(15px);
-  }
-.header>ul>li>input:focus{
+}
+
+.header>ul>li>input:focus {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 .logo>img {
     padding-left: 100px;
     width: 130px;
     height: 35px;
     margin-top: 2px;
 }
+
 .body {
     background-color: #FFFFFF;
     display: flex;
@@ -86,6 +99,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
+
 .card {
     border: 2px solid #F5F5F5;
     background-color: #F5F5F5;
@@ -96,17 +110,21 @@ body {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
 .card>img {
     width: 100%;
 }
+
 .card>h5 {
     display: flex;
     justify-content: space-between;
 }
+
 .shimmer-component {
     border-radius: 10px;
     margin-left: 10px;
@@ -115,26 +133,57 @@ body {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
-.offers{
+
+.offers {
     padding-top: 100px;
 }
-.nav-link{
+
+.nav-link {
     text-decoration: none;
     color: #333333;
 }
-.card-link{
+
+.card-link {
     text-decoration: none;
     color: #333333;
 }
-.help{
+
+.help {
     padding-top: 100px;
 }
-.login{
+
+.login {
     padding-top: 100px;
 }
-.cart{
+
+.cart {
     padding-top: 100px;
 }
-.view-restaurant{
+
+.view-restaurant {
     padding-top: 100px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.view-restaurant .rest-url {
+    margin-left: 330px;
+    font-size: 10px
+}
+
+.view-restaurant .restaurant-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin: 30px 350px;
+}
+
+.view-restaurant .restaurant-details .main-img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+.view-restaurant .restaurant-details p:nth-last-child(1),
+.view-restaurant .restaurant-details p:nth-last-child(2) {
+  text-align: right;
 }

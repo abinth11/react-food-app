@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import RestaurantCard from './RestaurantCard';
 import ShimmerEffect from './shimmer';
 import { MyContext } from '../App';
-import { Link } from 'react-router-dom';
 
 const Body = () => {
   const shimmer = new Array(15).fill(0)
