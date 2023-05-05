@@ -17,6 +17,8 @@ body {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
+    padding: 0;
+    margin: 0;
 }
 
 .header {
@@ -171,10 +173,8 @@ body {
 }
 
 .view-restaurant .restaurant-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    position: relative;
+
     margin: 30px 350px;
 }
 
@@ -183,7 +183,75 @@ body {
     height: auto;
     max-width: 500px;
 }
-.view-restaurant .restaurant-details p:nth-last-child(1),
-.view-restaurant .restaurant-details p:nth-last-child(2) {
-  text-align: right;
+
+.restaurant-details .rating-button {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    border: 0.10px;
+    border-width: 0.5px;
+    margin-top: 20px;
+    width: 60px;
+    height: 70px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 2px 2px rgba(41, 41, 41, 0.1);
+    border-radius: 5px;
 }
+
+.restaurant-details .rating-button .s-rating {
+    color: #3D9B6D;
+}
+
+.restaurant-details>button>span:nth-last-child(1) {
+    font-size: 10px;
+    margin-top: 0;
+    padding-top: 0;
+    display: inline-block;
+
+}
+
+.doted-hr{
+margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 35px;
+}
+
+.menu-item{
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+.menu-item .add-button {
+    position: absolute;
+    background-color: #FFFFFF;
+    top: 40px;
+    right: 100px;
+    color: #7AB246;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: #888;
+    box-shadow: 0px 3px 5px rgba(112, 112, 112, 0.3);
+
+} 
+.menu-item .add-button:hover{
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); 
+}
+.menu-item .description{
+    font-size: 13px;
+}
+.menu-item .menu-item-image{
+    width: 118px;
+    height: 96px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+
+}
+/* .restaurant-menu{
+    position: relative;
+}
+

@@ -1,6 +1,6 @@
 import React from "react";
 import { logoImageUrl } from "../constants";
-import filterData from "../filterAlgorithm";
+import filterData from "../Helpers/filterAlgorithm";
 import { Link } from "react-router-dom";
 const logo = (
   <div className="logo">
