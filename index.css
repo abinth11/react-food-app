@@ -223,8 +223,8 @@ margin-top: 40px;
 .menu-item .add-button {
     position: absolute;
     background-color: #FFFFFF;
-    top: 40px;
-    right: 100px;
+    top: 58px;
+    right: 120px;
     color: #7AB246;
     border-radius: 5px;
     font-size: 15px;
@@ -241,6 +241,7 @@ margin-top: 40px;
 }
 .menu-item .description{
     font-size: 13px;
+    margin-top: 40px;
 }
 .menu-item .menu-item-image{
     width: 118px;

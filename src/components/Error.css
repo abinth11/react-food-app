@@ -1,0 +1,54 @@
+.error-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+  }
+  
+  .error-message {
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  
+  .home-button {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f93c3c;
+    border-radius: 5px;
+    padding: 15px 25px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .home-button:hover {
+    background-color: #e82c2c;
+  }
+  

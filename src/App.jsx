@@ -34,7 +34,7 @@ const AppLayout = () => {
       setAllRestaurants(parsedJson?.data?.cards[2]?.data?.data?.cards)
       setTimeout(() => {
         setIsLoading(false)
-      }, 2000)
+      }, 1000)
     } catch (error) {
       // console.log(error)
       // alert('something went wrong..')
