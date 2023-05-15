@@ -1,27 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { FaStar } from 'react-icons/fa';
 import RestaurantMenu from "./RestaurantMenu";
+import useFetchRestaurantMenu from "../Hooks/useFetchRestaurantMenu";
 const ViewRestaurant = () => {
-    const [restaurant, setRestaurant] = useState(null)
-    const [menu, setMenu] = useState(null)
-    const [menuTitle,setMenuTitle] = useState('')
-    useEffect(() => {
-        getRestaurantData()
-    }, [])
-    const menuItems = menu?.length?menu?.length:0
     const { resId } = useParams()
-    const getRestaurantData = async () => {
-        try {
-            const data = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.927532&lng=76.2638427&restaurantId=${resId}&submitAction=ENTER`)
-            const restaurantData = await data.json()
-            setRestaurant(restaurantData?.data?.cards[0]?.card?.card?.info)
-            setMenuTitle(restaurantData?.data?.cards[2]?.groupedCard.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.title)
-            setMenu(restaurantData?.data?.cards[2]?.groupedCard.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    const [restaurant, menu, menuTitle, menuItems, isLoading, isError, error] = useFetchRestaurantMenu(resId)
     return (
         <div className="view-restaurant">
             <p className="rest-url">Home / {restaurant?.city} / {restaurant?.areaName} / {restaurant?.name}</p>

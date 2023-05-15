@@ -14,41 +14,23 @@ import Contact from './components/Help';
 import Cart from './components/Cart';
 import SignIn from './components/SignIn';
 import ViewRestaurant from './components/ViewRestaurant';
-
+import useFetchRestaurant from './Hooks/useFetchRestaurant';
 export const MyContext = createContext()
 
+
 const AppLayout = () => {
-  useEffect(() => {
-    getRestaurants()
-  }, [])
+  const [restaurantData, isLoading, isError, error] = useFetchRestaurant();
   const [allRestaurants, setAllRestaurants] = useState([])
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
   const [searchText, setSearchText] = useState("")
-  const [isLoading, setIsLoading] = useState(true)
-
-  const getRestaurants = async () => {
-    try {
-      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.927532&lng=76.2638427&page_type=DESKTOP_WEB_LISTING")
-      const parsedJson = await data.json()
-      setFilteredRestaurant(parsedJson?.data?.cards[2]?.data?.data?.cards)
-      setAllRestaurants(parsedJson?.data?.cards[2]?.data?.data?.cards)
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 1000)
-    } catch (error) {
-      // console.log(error)
-      // alert('something went wrong..')
-    }
-  }
-
   return (
     <>
       <Header searchText={searchText}
         setSearchText={setSearchText}
         restaurant={filteredRestaurant}
         setRestaurant={setFilteredRestaurant}
-        allRestaurant={allRestaurants} />
-      <MyContext.Provider value={{ restaurant: filteredRestaurant, allRestaurants, isLoading }}>
+        allRestaurant={restaurantData} />
+      <MyContext.Provider value={{ restaurant: restaurantData, allRestaurants, isLoading }}>
         <Outlet />
       </MyContext.Provider>
       <Footer />
@@ -70,20 +52,20 @@ const AppRouter = createBrowserRouter([{
       element: <About />
     },
     {
-      path:'/help',
-      element:<Contact/>
+      path: '/help',
+      element: <Contact />
     },
     {
-      path:'/login',
-      element:<SignIn/>
+      path: '/login',
+      element: <SignIn />
     },
     {
-      path:'/Cart',
-      element:<Cart/>
+      path: '/Cart',
+      element: <Cart />
     },
     {
-      path:'/view-restaurant/:resId',
-      element:<ViewRestaurant/>
+      path: '/view-restaurant/:resId',
+      element: <ViewRestaurant />
     }
   ]
 }])

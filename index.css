@@ -126,6 +126,9 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.card>h3 {
+   font-size: 24px;
+}
 
 .shimmer-component {
     border-radius: 10px;
