@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchRestaurantsUrl } from '../constants';
 const useFetchRestaurant = () => {
-  console.log('usefechrestaurant is called')
   const [isLoading, setIsLoading] = useState(true);
   const [restaurants, setRestaurants] = useState([]);
   const [isError, setIsError] = useState(false);

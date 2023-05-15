@@ -16,24 +16,32 @@ import SignIn from './components/SignIn';
 import ViewRestaurant from './components/ViewRestaurant';
 import useFetchRestaurant from './Hooks/useFetchRestaurant';
 export const MyContext = createContext()
-
-
+import YouAreOffline from './components/offline/YouAreOffline';
+import useIsOnline from './Hooks/useIsOnline';
 const AppLayout = () => {
+  const isOnline = useIsOnline()
   const [restaurantData, isLoading, isError, error] = useFetchRestaurant();
   const [allRestaurants, setAllRestaurants] = useState([])
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
   const [searchText, setSearchText] = useState("")
+  console.log(isError)
   return (
     <>
-      <Header searchText={searchText}
-        setSearchText={setSearchText}
-        restaurant={filteredRestaurant}
-        setRestaurant={setFilteredRestaurant}
-        allRestaurant={restaurantData} />
-      <MyContext.Provider value={{ restaurant: restaurantData, allRestaurants, isLoading }}>
-        <Outlet />
-      </MyContext.Provider>
-      <Footer />
+      {
+        !isOnline || isError?
+          <YouAreOffline />
+          : <>
+            <Header searchText={searchText}
+              setSearchText={setSearchText}
+              restaurant={filteredRestaurant}
+              setRestaurant={setFilteredRestaurant}
+              allRestaurant={restaurantData} />
+            <MyContext.Provider value={{ restaurant: restaurantData, allRestaurants, isLoading }}>
+              <Outlet />
+            </MyContext.Provider>
+            <Footer />
+          </>
+      }
     </>
   )
 }
