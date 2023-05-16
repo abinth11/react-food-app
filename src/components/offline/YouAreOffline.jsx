@@ -1,5 +1,4 @@
 import React from "react";
-import "./YouAreOffline.css";
 
 const YouAreOffline = () => {
   return (

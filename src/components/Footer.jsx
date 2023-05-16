@@ -2,7 +2,6 @@ import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { AiFillFacebook, AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
-import "./Footer.css";
 
 function Footer() {
   return (
