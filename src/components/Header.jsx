@@ -23,7 +23,7 @@ const Header = ({ searchText, setSearchText, restaurant, setRestaurant, allResta
           />
         </li>
         <li>
-          <Link className="nav-link" to='/offers'>Offers</Link>
+          <Link className="bg-red-400" to='/offers'>Offers</Link>
         </li>
         <li>
           <Link className="nav-link" to='/help'>Help</Link>

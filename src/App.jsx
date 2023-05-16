@@ -26,7 +26,7 @@ const AppLayout = () => {
   const [searchText, setSearchText] = useState("")
   console.log(isError)
   return (
-    <>
+    <>   
       {
         !isOnline || isError ?
           <YouAreOffline />
