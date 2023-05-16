@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [ "./src/**/*.{html,jsx}"],
-  theme: {
-    extend: {},
+export const content = ['./src/**/*.{html,jsx}'];
+export const theme = {
+  extend: {
+    fontFamily: {
+      sans: ['Roboto', 'Arial', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
+    colors: {
+      customBlue: '#0C1326',
+    }
   },
-  plugins: [],
-}
-
+};
+export const plugins = [];

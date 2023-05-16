@@ -30,8 +30,9 @@ const AppLayout = () => {
       {
         !isOnline || isError ?
           <YouAreOffline />
-          : <>
-            <Header searchText={searchText}
+          :
+          <div className='relative'>
+          <Header searchText={searchText}
               setSearchText={setSearchText}
               restaurant={filteredRestaurant}
               setRestaurant={setFilteredRestaurant}
@@ -40,7 +41,7 @@ const AppLayout = () => {
               <Outlet />
             </MyContext.Provider>
             <Footer />
-          </>
+          </div> 
       }
     </>
   )
