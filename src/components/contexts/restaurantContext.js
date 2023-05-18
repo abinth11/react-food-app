@@ -1,7 +1,5 @@
 import {createContext} from 'react'
 
-const RestaurantContext = createContext({
-    restaurant:[]
-})
+export const RestaurantContext = createContext()
 
-export default RestaurantContext
+RestaurantContext.displayName = 'RestaurantContext'

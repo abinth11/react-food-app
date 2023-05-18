@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense} from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/partials/Header';
 import Body from './components/Body';
@@ -17,31 +17,25 @@ import useFetchRestaurant from './Hooks/useFetchRestaurant';
 import YouAreOffline from './components/offline/YouAreOffline';
 import useIsOnline from './Hooks/useIsOnline';
 import Instamart from './components/instamart/instamart';
-import RestaurantContext from './components/contexts/restaurantContext';
+import { RestaurantContext } from './components/contexts/RestaurantContext';
+import { restaurantData } from './constants';
 const LazyCart = lazy(() => import('./components/Cart'))
 const AppLayout = () => {
   const isOnline = useIsOnline()
-  const [restaurantData, isLoading, isError, error] = useFetchRestaurant();
-  const [allRestaurants, setAllRestaurants] = useState([])
-  const [filteredRestaurant, setFilteredRestaurant] = useState([])
-  const [searchText, setSearchText] = useState("")
+  const [allRestaurants, filteredRestaurants, setFilteredRestaurants, isLoading, isError, error] = useFetchRestaurant();
   return (
-    <>   
+    <>
       {
         !isOnline || isError ?
           <YouAreOffline />
           :
           <div className='relative'>
-          <Header searchText={searchText}
-              setSearchText={setSearchText}
-              restaurant={filteredRestaurant}
-              setRestaurant={setFilteredRestaurant}
-              allRestaurant={restaurantData} />
-            <RestaurantContext.Provider value={{ restaurant: restaurantData, allRestaurants, isLoading }}>
+            <RestaurantContext.Provider value={{ filteredRestaurants, setFilteredRestaurants, isLoading, allRestaurants }}>
+              <Header />
               <Outlet />
             </RestaurantContext.Provider>
             <Footer />
-          </div> 
+          </div>
       }
     </>
   )
@@ -70,7 +64,7 @@ const AppRouter = createBrowserRouter([{
     },
     {
       path: '/instamart',
-      element:<Instamart/>
+      element: <Instamart />
     },
     {
       path: '/Cart',

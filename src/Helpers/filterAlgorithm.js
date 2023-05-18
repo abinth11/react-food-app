@@ -1,8 +1,10 @@
-const filterData = (searchText,data,setData,allData) => {
-    const filteredData = allData.filter((item) => {
-      return item.data.name.toLowerCase().trim().includes(searchText.toLowerCase().trim())
-    })
-    setData(filteredData)
+const filterRestaurant = (searchText, setRestaurant, allRestaurant) => {
+  if ((searchText === '')) {
+    return;
   }
-  export default filterData
-
+  const filteredData = allRestaurant.filter((item) => {
+    return item.data.name.toLowerCase().trim().includes(searchText.toLowerCase().trim());
+  });
+  setRestaurant(filteredData);
+};
+export default filterRestaurant;

@@ -1,13 +1,16 @@
-import React from "react";
+import React,{useContext, useState} from "react";
 import { logoImageUrl } from "../../constants";
-import filterData from "../../Helpers/filterAlgorithm";
+import filterRestaurant from '../../Helpers/filterAlgorithm'
 import { Link } from "react-router-dom";
+import {RestaurantContext} from '../contexts/RestaurantContext.js'
 const logo = (
   <div className="w-36 p-2 m-2 ml-14">
     <img src={logoImageUrl} alt="logo" />
   </div>
 );
-const Header = ({ searchText, setSearchText, restaurant, setRestaurant, allRestaurant }) => {
+const Header = () => {
+  const [searchText,setSearchText] = useState('')
+  const  {setFilteredRestaurants,allRestaurants}= useContext(RestaurantContext)
   return (
     <div className="bg-fixed fixed top-0 w-full flex justify-between shadow-lg p-3 font-bold border rounded-md z-20">
       <a href="/">{logo}</a>
@@ -20,7 +23,7 @@ const Header = ({ searchText, setSearchText, restaurant, setRestaurant, allResta
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
-              filterData(searchText, restaurant, setRestaurant, allRestaurant);
+              filterRestaurant(searchText, setFilteredRestaurants,allRestaurants);
             }}
           />
         </li>
