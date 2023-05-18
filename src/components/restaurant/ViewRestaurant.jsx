@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { FaStar } from 'react-icons/fa';
 import RestaurantMenu from "./RestaurantMenu";
-import useFetchRestaurantMenu from "../Hooks/useFetchRestaurantMenu";
+import useFetchRestaurantMenu from "../../Hooks/useFetchRestaurantMenu";
 const ViewRestaurant = () => {
     const { resId } = useParams()
     const [restaurant, menu, menuTitle, menuItems, isLoading, isError, error] = useFetchRestaurantMenu(resId)

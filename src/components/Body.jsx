@@ -1,15 +1,12 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link } from 'react-router-dom';
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard from './restaurant/RestaurantCard';
 import ShimmerEffect from './shimmer';
-import { MyContext } from '../App';
+import RestaurantContext from './contexts/restaurantContext';
 const Body = () => {
+  const {restaurant,isLoading} = useContext(RestaurantContext)
   const shimmer = new Array(15).fill(0)
   return (
-    <MyContext.Consumer>
-      {(context) => {
-        const { restaurant, isLoading } = context;
-        return (
           <div className='mt-36 flex flex-wrap ml-32 '>
             {
               isLoading
@@ -21,9 +18,6 @@ const Body = () => {
                 }))
             }
           </div >
-        );
-      }}
-    </MyContext.Consumer>
   );
 }
 export default Body;

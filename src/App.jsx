@@ -1,8 +1,8 @@
-import React, { useState, lazy, Suspense, createContext } from 'react';
+import React, { useState, lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from './components/Header';
+import Header from './components/partials/Header';
 import Body from './components/Body';
-import Footer from './components/Footer';
+import Footer from './components/partials/Footer';
 import {
   RouterProvider,
   createBrowserRouter,
@@ -12,12 +12,12 @@ import ErrorElement from './components/ErrorElement';
 import About from './components/Offers';
 import Contact from './components/Help';
 import SignIn from './components/SignIn';
-import ViewRestaurant from './components/ViewRestaurant';
+import ViewRestaurant from './components/restaurant/ViewRestaurant';
 import useFetchRestaurant from './Hooks/useFetchRestaurant';
-export const MyContext = createContext()
 import YouAreOffline from './components/offline/YouAreOffline';
 import useIsOnline from './Hooks/useIsOnline';
 import Instamart from './components/instamart/instamart';
+import RestaurantContext from './components/contexts/restaurantContext';
 const LazyCart = lazy(() => import('./components/Cart'))
 const AppLayout = () => {
   const isOnline = useIsOnline()
@@ -37,9 +37,9 @@ const AppLayout = () => {
               restaurant={filteredRestaurant}
               setRestaurant={setFilteredRestaurant}
               allRestaurant={restaurantData} />
-            <MyContext.Provider value={{ restaurant: restaurantData, allRestaurants, isLoading }}>
+            <RestaurantContext.Provider value={{ restaurant: restaurantData, allRestaurants, isLoading }}>
               <Outlet />
-            </MyContext.Provider>
+            </RestaurantContext.Provider>
             <Footer />
           </div> 
       }
