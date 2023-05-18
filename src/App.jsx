@@ -17,6 +17,7 @@ import useFetchRestaurant from './Hooks/useFetchRestaurant';
 export const MyContext = createContext()
 import YouAreOffline from './components/offline/YouAreOffline';
 import useIsOnline from './Hooks/useIsOnline';
+import Instamart from './components/instamart/instamart';
 const LazyCart = lazy(() => import('./components/Cart'))
 const AppLayout = () => {
   const isOnline = useIsOnline()
@@ -24,7 +25,6 @@ const AppLayout = () => {
   const [allRestaurants, setAllRestaurants] = useState([])
   const [filteredRestaurant, setFilteredRestaurant] = useState([])
   const [searchText, setSearchText] = useState("")
-  console.log(isError)
   return (
     <>   
       {
@@ -67,6 +67,10 @@ const AppRouter = createBrowserRouter([{
     {
       path: '/login',
       element: <SignIn />
+    },
+    {
+      path: '/instamart',
+      element:<Instamart/>
     },
     {
       path: '/Cart',

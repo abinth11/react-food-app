@@ -8,14 +8,14 @@ const ViewRestaurant = () => {
     const [restaurant, menu, menuTitle, menuItems, isLoading, isError, error] = useFetchRestaurantMenu(resId)
     return (
         isLoading ?
-            <h3 style={{marginTop:"200px",textAlign:"center"}}>Loading</h3>
+            <h3 className="mt-20  pt-5">Loading</h3>
             :
-            <div className="view-restaurant">
-                <p className="rest-url">Home / {restaurant?.city} / {restaurant?.areaName} / {restaurant?.name}</p>
-                <div className="restaurant-details">
+            <div className="mt-20 p-5 ml-52">
+                <p className="font-thin">Home / {restaurant?.city} / {restaurant?.areaName} / {restaurant?.name}</p>
+                <div className="mt-10">
                     {/* <img className="main-img" src={`${restaurantImageUrl}/${restaurant?.cloudinaryImageId}`} alt="restaurant" /> */}
-                    <h2>{restaurant?.name}</h2>
-                    <p style={{ paddingTop: '0px' }}>{restaurant?.cuisines?.join(', ')}</p>
+                    <h2 className="text-xl">{restaurant?.name}</h2>
+                    <p className="mt-3">{restaurant?.cuisines?.join(', ')}</p>
                     <p>{restaurant?.areaName}, {restaurant?.sla?.lastMileTravelString} </p>
                     <p>{restaurant?.feeDetails?.message}</p>
                     <button className="rating-button">

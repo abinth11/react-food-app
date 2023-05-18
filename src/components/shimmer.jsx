@@ -2,7 +2,7 @@ import React from "react";
 import { Shimmer } from "react-shimmer";
 const ShimmerEffect = () => (
     <Shimmer 
-     className="shimmer-component"
+     className="w-72 pt-3 pb-3 mx-3 mb-10 p-2 rounded-r-sm"
       width={280}
       height={350}
       duration={1000}

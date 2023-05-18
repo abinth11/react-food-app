@@ -10,7 +10,7 @@ const Body = () => {
       {(context) => {
         const { restaurant, isLoading } = context;
         return (
-          <div className='mt-36 flex flex-wrap ml-32 mr-32 '>
+          <div className='mt-36 flex flex-wrap ml-32 '>
             {
               isLoading
                 ? (
