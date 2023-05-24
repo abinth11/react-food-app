@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/partials/Header';
 import Body from './components/Body';
@@ -18,11 +18,10 @@ import YouAreOffline from './components/offline/YouAreOffline';
 import useIsOnline from './Hooks/useIsOnline';
 import Instamart from './components/instamart/instamart';
 import { RestaurantContext } from './components/contexts/RestaurantContext';
-import { restaurantData } from './constants';
 const LazyCart = lazy(() => import('./components/Cart'))
 const AppLayout = () => {
   const isOnline = useIsOnline()
-  const [allRestaurants, filteredRestaurants, setFilteredRestaurants, isLoading, isError, error] = useFetchRestaurant();
+  const [allRestaurants, filteredRestaurants, setFilteredRestaurants, isLoading, isError] = useFetchRestaurant();
   return (
     <>
       {

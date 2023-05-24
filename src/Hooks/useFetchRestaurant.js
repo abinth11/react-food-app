@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { fetchRestaurantsUrl } from '../constants';
-import filterRestaurant from '../Helpers/filterAlgorithm';
 const useFetchRestaurant = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [restaurants, setRestaurants] = useState([]);
